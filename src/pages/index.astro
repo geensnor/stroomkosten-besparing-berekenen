@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Calculator from "../components/Calculator.svelte";
+import Footer from "../components/Footer.astro";
+
+const title = "⚡🤑 Stroomkosten besparing berekenen";
+---
+
+<Layout title={title}>
+	<main class="container mx-auto">
+		<div>
+			<h1 class="text-center text-5xl p-3 text-bold text-orange-500">
+				{title}
+			</h1>
+			<p class="text-center text-2xl p-3 text-gray-400">
+				Hoeveel euro levert jouw besparing op?
+			</p>
+		</div>
+		<div class="mt-4">
+			<Calculator client:load />
+		</div>
+	</main>
+	<Footer />
+</Layout>
