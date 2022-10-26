@@ -33,7 +33,7 @@
         />
     </div>
     <div class="col-span-4 md:col-span-2">
-        <Card title="Wat is dit❓">
+        <Card title="Wat is dit? 🤔">
             Als je stroomkosten wilt besparen, is het handig als je het eerst
             even doorrekent. Met deze tool kun je berekenen hoe lang het duurt
             voordat je je investering hebt terugverdiend. Als je niets
