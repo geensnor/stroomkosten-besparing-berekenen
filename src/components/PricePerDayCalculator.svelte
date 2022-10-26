@@ -53,6 +53,7 @@
         <div>
             <Input
                 label="watt"
+                maxlength="6"
                 bind:value={powerOne}
                 on:input={calculateTotalkWh}
             />
@@ -74,6 +75,7 @@
         <div>
             <Input
                 label="watt"
+                maxlength="6"
                 bind:value={powerTwo}
                 on:input={calculateTotalkWh}
             />

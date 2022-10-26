@@ -17,8 +17,7 @@
                 label="Stroomprijs in euro per kWh"
                 type="number"
                 step="0.01"
-                maxlength="4"
-                lang="nl-NL"
+                maxlength="6"
                 bind:value={priceWh}
             />
             <Input label="Investering in euro" bind:value={priceInvestment} />
