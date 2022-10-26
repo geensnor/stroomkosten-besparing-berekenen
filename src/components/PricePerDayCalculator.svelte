@@ -11,7 +11,7 @@
     let hoursOne = 12;
     let hoursTwo = 12;
 
-    let powerTwo = 3;
+    let powerTwo = 0;
 
     $: costOne = calculateCostYear(powerOne, hoursOne, priceWh);
     $: costTwo = calculateCostYear(powerTwo, hoursTwo, priceWh);
@@ -44,7 +44,7 @@
     <div class="grid grid-cols-3 gap-y-4 ">
         <div>
             <Input
-                label="uren per dag"
+                label="uren per dag aan"
                 maxlength="2"
                 bind:value={hoursOne}
                 on:input={hoursOneChange}
@@ -66,7 +66,7 @@
         </div>
         <div>
             <Input
-                label="uren per dag"
+                label="uren per dag uit/stand-by"
                 maxlength="2"
                 bind:value={hoursTwo}
                 on:input={hoursTwoChange}
