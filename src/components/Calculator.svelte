@@ -15,7 +15,6 @@
         <Card title="Kosten 💸">
             <Input
                 label="Stroomprijs in euro per kWh"
-                type="number"
                 step="0.01"
                 maxlength="6"
                 bind:value={priceWh}
