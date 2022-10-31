@@ -8,6 +8,7 @@
     let priceInvestment = 100;
     let powerYearBefore = "";
     let powerYearAfter = "";
+    let co2Intensity = 330;
 </script>
 
 <div class="grid grid-cols-4 gap-4">
@@ -24,20 +25,32 @@
     </div>
     <div class="col-span-4 md:col-span-2 lg:col-span-1">
         <Savings
-            title="Besparing per jaar 💰"
+            title="Besparing per jaar 💰 🌱"
             {powerYearBefore}
             {powerYearAfter}
             {priceWh}
             {priceInvestment}
+            {co2Intensity}
         />
     </div>
     <div class="col-span-4 md:col-span-2">
-        <Card title="Wat is dit? 🤔">
-            Als je stroomkosten wilt besparen, is het handig als je het eerst
-            even doorrekent. Met deze tool kun je berekenen hoe lang het duurt
-            voordat je je investering hebt terugverdiend. Als je niets
-            investeert, kun je uitrekenen hoeveel je per jaar bespaart als je
-            minder stroom gaat gebruiken.
+        <Card title="Wat is dit? 🤔"
+            ><p>
+                Als je stroomkosten wilt besparen, is het handig als je het
+                eerst even doorrekent. Met deze tool kun je berekenen hoe lang
+                het duurt voordat je je investering hebt terugverdiend. Als je
+                niets investeert, kun je uitrekenen hoeveel je per jaar bespaart
+                als je minder stroom gaat gebruiken.
+            </p>
+            <p class="mt-4 text-xs">
+                Voor de uitstoot wordt uitgegaan van {co2Intensity} gram CO₂ per
+                kWh. Bron:
+                <a
+                    class="underline decoration-blue-600 text-blue-600"
+                    href="https://ourworldindata.org/grapher/carbon-intensity-electricity?tab=chart&country=~NLD"
+                    target="_new">Our world in data</a
+                >
+            </p>
         </Card>
     </div>
 

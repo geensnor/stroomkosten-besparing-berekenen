@@ -6,10 +6,12 @@
     export let powerYearAfter;
     export let priceWh;
     export let priceInvestment;
+    export let co2Intensity;
 
     $: powerYearSaving = powerYearBefore - powerYearAfter;
     $: euroYearSaving = powerYearSaving * priceWh;
     $: paybackPeriodDays = (priceInvestment / euroYearSaving) * 365;
+    $: co2Saved = (powerYearSaving * co2Intensity) / 1000;
 
     $: lineColor =
         euroYearSaving > 0 ? "decoration-green-500" : "decoration-red-500";
@@ -39,6 +41,13 @@
             {:else}
                 {paybackPeriodDays.toFixed(0)} dagen 👍
             {/if}
+        </div>
+        <div>CO₂</div>
+        <div class="font-bold">
+            {co2Saved.toLocaleString("nl-NL", {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 2,
+            })} kg
         </div>
     </div>
 </Card>
