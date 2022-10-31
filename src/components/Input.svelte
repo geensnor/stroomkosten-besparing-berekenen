@@ -1,18 +1,22 @@
 <script>
-    export let type = "number";
     export let step = 1;
     export let label = "";
     export let error = "";
     export let maxlength = 10;
-    export let lang="nl-NL"
-    export let value 
+    export let value;
+    export let inputClass;
+
+    let type = "number";
 
     function handleInput({ target: t }) {
         value = t.value === "" ? null : t.valueAsNumber;
-        value = (t.value.length > maxlength) ? value = t.value.slice(0, maxlength) : t.value
-       
-        if (label == "uren per dag" && (value > 24 || value.length > 2)) {
-            error = "maximaal 24";
+        value =
+            t.value.length > maxlength
+                ? (value = t.value.slice(0, maxlength))
+                : t.value;
+
+        if (inputClass == "hours" && (value > 24 || value < 0)) {
+            error = "tussen 0 en 24 uren";
         } else {
             error = "";
         }
@@ -30,6 +34,7 @@
         {value}
         class:error
         on:input={handleInput}
+        on:input
     />
     {#if error}
         <span class="block text-red-600">{error}</span>
