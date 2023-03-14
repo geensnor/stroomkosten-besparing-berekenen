@@ -17,9 +17,9 @@
   $: costTwo = calculateCostYear(powerTwo, hoursTwo, priceWh);
   $: totalCost = parseFloat(costOne) + parseFloat(costTwo);
 
-  function calculateCostYear(power, hours, priceWh) {
-    return ((power * hours * priceWh) / 1000) * 365;
-  }
+
+  const calculateCostYear = (power, hours, priceWh) =>
+    ((power * hours * priceWh) / 1000) * 365;
 
   const calculateTotalkWh = () => {
     totalkWh = ((hoursOne * powerOne + hoursTwo * powerTwo) / 1000) * 365;

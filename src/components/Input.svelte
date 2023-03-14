@@ -9,7 +9,8 @@
 
   let type = "number";
 
-  function handleInput({ target: t }) {
+
+  const handleInput = ({ target: t }) => {
     value = t.value === "" ? null : t.valueAsNumber;
     value =
       t.value.length > maxlength
@@ -21,7 +22,7 @@
     } else {
       error = "";
     }
-  }
+  };
 </script>
 
 <label class="block text-gray-700 text-sm font-bold m-2">
