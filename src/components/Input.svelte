@@ -3,10 +3,12 @@
   export let label = "";
   export let error = "";
   export let maxlength = 10;
+  export let maxValue;
   export let value;
   export let inputClass;
 
   let type = "number";
+
 
   const handleInput = ({ target: t }) => {
     value = t.value === "" ? null : t.valueAsNumber;
@@ -32,9 +34,11 @@
     {type}
     {step}
     {value}
+    max={maxValue ? maxValue : ""}
     class:error
     on:input={handleInput}
     on:input
+    min="0"
   />
   {#if error}
     <span class="block text-red-600">{error}</span>

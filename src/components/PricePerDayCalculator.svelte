@@ -17,6 +17,7 @@
   $: costTwo = calculateCostYear(powerTwo, hoursTwo, priceWh);
   $: totalCost = parseFloat(costOne) + parseFloat(costTwo);
 
+
   const calculateCostYear = (power, hours, priceWh) =>
     ((power * hours * priceWh) / 1000) * 365;
 
@@ -45,6 +46,8 @@
       <Input
         label="uren per dag aan"
         maxlength="2"
+        maxValue="24"
+        inputClass="hours"
         bind:value={hoursOne}
         on:input={hoursOneChange}
       />
@@ -67,6 +70,8 @@
       <Input
         label="uren per dag uit/stand-by"
         maxlength="2"
+        maxValue="24"
+        inputClass="hours"
         bind:value={hoursTwo}
         on:input={hoursTwoChange}
       />
