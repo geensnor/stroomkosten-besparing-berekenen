@@ -20,24 +20,26 @@
   $: costTwo = calculateCostYear(powerTwo, hoursTwo, priceWh);
   $: totalCost = costOne + costTwo;
 
-  function calculateCostYear(power, hours, priceWh) {
-    return ((power * hours * priceWh) / 1000) * 365;
-  }
+  const calculateCostYear = (
+    power: number,
+    hours: number,
+    priceWh: number
+  ): number => ((power * hours * priceWh) / 1000) * 365;
 
-  const calculateTotalkWh = () => {
+  const calculateTotalkWh = (): void => {
     totalkWh = ((hoursOne * powerOne + hoursTwo * powerTwo) / 1000) * 365;
   };
 
-  const hoursOneChange = () => {
+  const hoursOneChange = (): void => {
     hoursTwo = 24 - hoursOne;
     calculateTotalkWh();
   };
-  const hoursTwoChange = () => {
+  const hoursTwoChange = (): void => {
     hoursOne = 24 - hoursTwo;
     calculateTotalkWh();
   };
 
-  onMount(() => {
+  onMount((): void => {
     hoursOneChange();
     hoursTwoChange();
   });
