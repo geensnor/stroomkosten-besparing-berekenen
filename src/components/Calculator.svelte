@@ -8,7 +8,7 @@
     let priceInvestment = 100;
     let powerYearBefore = "";
     let powerYearAfter = "";
-    let co2Intensity = 330;
+    let co2Intensity = 268;
 </script>
 
 <div class="grid grid-cols-4 gap-4">
